@@ -47,7 +47,7 @@ spaceship_vi_mode() {
 
 # Temporarily switch to vi-mode
 spaceship_vi_mode_enable() {
-  function zle-keymap-select() { zle reset-prompt ; zle -R }
+  function zle-keymap-select() { PROMPT=$(spaceship::compose_prompt $SPACESHIP_PROMPT_ORDER); zle reset-prompt ; zle -R }
   zle -N zle-keymap-select
   bindkey -v
 }
